@@ -14,7 +14,10 @@ Loss of all database clusters in the Platform BSEE Dev environment
 * 7-13th Nov - We forward fixed these two applications, in doing so all of the Kubernetes namespaces were accidentally deleted. This resulted in the destruction of the Postgresql clusters and their underlying PVCs. We also determined that a number of databases WAL were failing to write to AWS S3.
 
 ## Root Cause
-The removal of the Kubernetes customer namespaces resulted in destruction of the cloudnative-pg cluster and the associated Kubernetes PVCs.
+Th removal of in-use Crossplane providers caused the deletion of provider related CRDs which included those that managed Kubernetes Namespaces.
+As a result, the Kubernetes namespaces managed by Crossplane were deleted, resulting in the deletion of the cloudnative-pg clusters and associated Kubernetes PVCs.
+
+New, empty database clusters were created. These new clusters were unable to perform backups as they would overwrite the existing backups in the S3 buckets.
 
 ## Resolution and recovery
 Databases could be recreated through point in time backups where they exist, in other cases BSEE instances with blank database were recovered.
