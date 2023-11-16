@@ -17,7 +17,7 @@ Loss of all database clusters in the Platform BSEE Dev environment
 The removal of the Kubernetes customer namespaces resulted in destruction of the cloudnative-pg cluster and the associated Kubernetes PVCs.
 
 ## Resolution and recovery
-Databases can be recreated through point in time backups where they exist, in other cases BSEE instances with blank database were recovered.
+Databases could be recreated through point in time backups where they exist, in other cases BSEE instances with blank database were recovered.
 
 ## Corrective and Preventative Measures
 * Disown the Kubernetes customer instance namespace from Crossplane once it is created, prevent it from being inadvertently deleted in the future.
