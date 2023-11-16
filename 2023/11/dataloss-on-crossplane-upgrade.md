@@ -23,10 +23,10 @@ New, empty database clusters were created. These new clusters were unable to per
 Databases could be recreated through point in time backups where they exist, in other cases BSEE instances with blank database were recovered.
 
 ## Corrective and Preventative Measures
-* Disown the Kubernetes customer instance namespace from Crossplane once it is created, prevent it from being inadvertently deleted in the future.
-* Create alerts when database backups fail
-* Take periodic logic (pg_dump) backups of each database and store it in S3 alongside the existing point in time backups.
-* Investigate the [Percona Operator for PostgreSQL](https://github.com/percona/percona-postgresql-operator) as a replacement from [cloudnative-pg](https://github.com/cloudnative-pg/cloudnative-pg) as we have seen a number of issues with cloudnative-pg which has undermined our confidence in their solution
+* Disown the Kubernetes customer instance namespace from Crossplane once it is created, prevent it from being inadvertently deleted in the future - [jira link](https://portswigger.atlassian.net/browse/SAAS-309)
+* Create alerts when database backups fail - [jira link](https://portswigger.atlassian.net/browse/SAAS-311)
+* Take periodic logic (pg_dump) backups of each database and store it in S3 alongside the existing point in time backups. - [jira link](https://portswigger.atlassian.net/browse/SAAS-313)
+* Investigate the [Percona Operator for PostgreSQL](https://github.com/percona/percona-postgresql-operator) as a replacement from [cloudnative-pg](https://github.com/cloudnative-pg/cloudnative-pg) as we have seen a number of issues with cloudnative-pg which has undermined our confidence in their solution - [jira link](https://portswigger.atlassian.net/browse/SAAS-312)
 
 ## White board session
 ![white board](../../media/06-11-2023-data-loss.jpg)
