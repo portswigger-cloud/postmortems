@@ -22,6 +22,6 @@ It is believed that the root cause of the issue was a new release of the github 
 * We don't want to pin ourself to certain versions, but we will be able to remediate and fix forward within a much smaller time frame should this error occur again (1hr). We could also create an alert for this error and have a ticket in the backlog for further remedial actions.
 
 ## Ticket trail
-https://portswigger.atlassian.net/issues/SD-458
-https://portswigger.atlassian.net/issues/TECH-580
-https://portswigger.atlassian.net/issues/TECH-581
+* https://portswigger.atlassian.net/issues/SD-458
+* https://portswigger.atlassian.net/issues/TECH-580
+* https://portswigger.atlassian.net/issues/TECH-581
