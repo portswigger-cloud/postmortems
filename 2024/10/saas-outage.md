@@ -22,8 +22,8 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
 ![Bottlerocket rollout](../../media/24-10-2024-saas-outage-bottlerocket-rollout.png)
 - 24-10-2024 04:45 - The SaaS Uptime Over Time Metric shows a significate drop of in availability percentage. 
 ![SaaS uptime metics](../../media/24-10-2024-saas-outage-uptime-metic.png)
-- 24-10-2024 08:07 - AS posted a message reporting the outage to the BSEE cloud onboarding issues channel.
-- 24-10-2024 - 08:15 - LB come to FS11 to let SB know verbally that there is an issue with SaaS.
+- 24-10-2024 08:07 - The Growth team posted a message reporting the outage to the BSEE cloud onboarding issues channel.
+- 24-10-2024 - 08:15 - A member of the Product team verbally notified the Technology Team that there is an issue with SaaS.
     - Initial investigations reveled that all the customers kubernetes Pods where in crash loop back off and the logs showed the following error messages:
         ```text
         2024-10-24T07:34:22.609730903Z + /usr/local/burpsuite_enterprise/bin/createKeystore es /home/burpsuitekeystores/es.keystore 07E0q1lzbEdBx4us2vOfh5emvayVLK
@@ -31,10 +31,9 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
         2024-10-24T07:34:22.614485724Z Failed to mark memory page as executable - check if grsecurity/PaX is enabled
         2024-10-24T07:34:42.976849Z    Stream closed EOF for ps-xxxxxxxx-prod/ps-xxxxxxxx-prod-xxxxx-burpsuite-66774f6fb-p5jwx (init-enterprise-server-keystore)
         ```
-    - SB suspected this was an OS issue from the error message and checked the AWS EC2 console, noticed that the EC2 nodes had been updated at 05:33 and workloads had been migrated to the new EC2 nodes after that.
-    - He checked the version of the OS, noted it was v1.26.0 and looked for issues with this OS in the Bottlerocket GitHub repo. He found [Issue 4260](https://github.com/bottlerocket-os/bottlerocket/issues/4260) - Compatibility issues with the v1.26.0 of Bottlerocket when running Java-based applications.
-- 24-10-2024 08:50 - TB arrived and SB handed the issue over to TB.
-    - As SB had already diagnosed the cause of the issue TB started the process of reverting all of the EC2 instances in the SaaS production account back to [v1.25.0](https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.25.0)
+    - The Technology Team suspected this was an OS issue from the error message and checked the AWS EC2 console, noticed that the EC2 nodes had been updated at 05:33 and workloads had been migrated to the new EC2 nodes after that.
+    - They checked the version of the OS, noted it was v1.26.0 and looked for issues with this OS in the Bottlerocket GitHub repo. They found [Issue 4260](https://github.com/bottlerocket-os/bottlerocket/issues/4260) - Compatibility issues with the v1.26.0 of Bottlerocket when running Java-based applications.
+    - The Technology Team started the process of reverting all of the EC2 instances in the SaaS production account back to [v1.25.0](https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.25.0)
 - 24-10-2024 09:15 - Customer instances started to come back online and service was restored.
 
 ## Root Cause
