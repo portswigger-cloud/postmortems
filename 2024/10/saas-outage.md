@@ -55,6 +55,6 @@ C compilers.
 
 ## Corrective and Preventative Measures 
 
-1. Changes have been made to the Karpenter resources so that we deploy a specific versioned Bottlerocket AMI rather than the latest released AMI. This increases the maintenatnce burden on the technology team and may result in critical security patch deployment being delayed.
+1. Changes have been made to the Karpenter resources so that we deploy a specific versioned Bottlerocket AMI rather than the latest released AMI. This increases the maintenance burden on the technology team and may result in critical security patch deployment being delayed.
 1. Bottlerocket release ATOM feed has been added to an internal tooling release dashboard.
-1. A public status page will be setup to communicate to users transparently.  
+1. A public status page will be setup to communicate to customers transparently.
