@@ -1,4 +1,4 @@
-# 30-10-2024 - MacOs upgrade caused networking issues across the estate 
+# 30-09-2024 - MacOs upgrade caused networking issues across the estate 
 
 ## Severity & Impact
 Critical - multiple users unable to work
