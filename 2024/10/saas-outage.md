@@ -1,4 +1,4 @@
-# 30-09-2024 - All instances not available to BSEE SaaS customers
+# 24-10-2024 - All instances not available to BSEE SaaS customers
 
 ## Impact
 
