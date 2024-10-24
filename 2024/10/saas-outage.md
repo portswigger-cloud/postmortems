@@ -24,7 +24,6 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
             2024-10-24T07:34:22.614470565Z Error occurred during initialization of VM│
             2024-10-24T07:34:22.614485724Z Failed to mark memory page as executable - check if grsecurity/PaX is enabled
             2024-10-24T07:34:42.976849Z    Stream closed EOF for ps-xxxxxxxx-prod/ps-xxxxxxxx-prod-xxxxx-burpsuite-66774f6fb-p5jwx (init-enterprise-server-keystore)
-
         ```
     - Simon Baker suspected this was an OS issue from the error message and checked the AWS EC2 console, noticed that the EC2 nodes had been updated at 05:33 and workloads had been migrated to the new EC2 nodes after that.
     - He checked the version of the OS, noted it was v1.26.0 and looked for issues with this os in the Bottlerocket GitHub repo. He found [Issue 4260](https://github.com/bottlerocket-os/bottlerocket/issues/4260) - Compatibility issues with the v1.26.0 of Bottlerocket when running Java-based applications.
