@@ -41,12 +41,14 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
 
 [PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the Bottlerocket default branch, this was then released in [v1.26.0](https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.26.0). This change to the OS config stopped applications that rely on JIT compilation, such as Java, from executing on v1.26.0 of the Bottlerocket OS.
 
-The documentation for this OS feature make it very clear that turning it on will affect Java applications
+The [documentation](https://www.freedesktop.org/software/systemd/man/latest/systemd.exec.html#:~:text=MemoryDenyWriteExecute) for this OS feature make it very clear that turning it on will affect Java applications
 ```
 Note that this option is incompatible with programs and libraries that generate program code dynamically
 at runtime, including JIT execution engines, executable stacks, and code "trampoline" feature of various
 C compilers.
 ```
+[Background on the security feature](https://en.wikipedia.org/wiki/W%5EX)
+
 [Bug tracking issue for Bottlerocket v1.26.0](https://github.com/bottlerocket-os/bottlerocket/issues/4253)
 
 ## Resolution and recovery
