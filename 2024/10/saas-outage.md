@@ -53,4 +53,8 @@ C compilers.
 
 ## Resolution and recovery
 
+1. Changes have been made to the Karpenter resources so that we deploy a specific versioned Bottlerocket AMI rather than the latest released AMI. This increases the maintenatnce burden on the technology team and may result in critical security patch deployment being delayed.
+2. Bottlerocket release ATOM feed has been added to an internal tooling release dashboard.
+3. A public status page will be setup to communicate to users transparently.  
+
 ## Corrective and Preventative Measures 
