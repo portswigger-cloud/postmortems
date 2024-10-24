@@ -20,10 +20,10 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
 - 24-10-2024 - 08:15 - Leom Burke come to FS11 to let Simon Baker know verbally that there is an issue with SaaS.
     - Initial investigations reveled that all the customers kubernetes Pods where in crash loop back off and the logs showed the following error messages:
         ```text
-            2024-10-24T07:34:22.609730903Z + /usr/local/burpsuite_enterprise/bin/createKeystore es /home/burpsuite/keystores/es.keystore 07E0q1lzbEdBx4us2vOfh5emvayVLK
-            2024-10-24T07:34:22.614470565Z Error occurred during initialization of VM│
-            2024-10-24T07:34:22.614485724Z Failed to mark memory page as executable - check if grsecurity/PaX is enabled
-            2024-10-24T07:34:42.976849Z    Stream closed EOF for ps-xxxxxxxx-prod/ps-xxxxxxxx-prod-xxxxx-burpsuite-66774f6fb-p5jwx (init-enterprise-server-keystore)
+        2024-10-24T07:34:22.609730903Z + /usr/local/burpsuite_enterprise/bin/createKeystore es /home/burpsuitekeystores/es.keystore 07E0q1lzbEdBx4us2vOfh5emvayVLK
+        2024-10-24T07:34:22.614470565Z Error occurred during initialization of VM│
+        2024-10-24T07:34:22.614485724Z Failed to mark memory page as executable - check if grsecurity/PaX is enabled
+        2024-10-24T07:34:42.976849Z    Stream closed EOF for ps-xxxxxxxx-prod/ps-xxxxxxxx-prod-xxxxx-burpsuite-66774f6fb-p5jwx (init-enterprise-server-keystore)
         ```
     - Simon Baker suspected this was an OS issue from the error message and checked the AWS EC2 console, noticed that the EC2 nodes had been updated at 05:33 and workloads had been migrated to the new EC2 nodes after that.
     - He checked the version of the OS, noted it was v1.26.0 and looked for issues with this os in the Bottlerocket GitHub repo. He found [Issue 4260](https://github.com/bottlerocket-os/bottlerocket/issues/4260) - Compatibility issues with the v1.26.0 of Bottlerocket when running Java-based applications.
