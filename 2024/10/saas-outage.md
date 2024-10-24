@@ -2,9 +2,9 @@
 
 ## Impact
 
-| Customers Impacted | Support Cases Raised |
-|:---:|:---:|
-| All | 1 |
+| Customers Impacted | Support Cases Raised | Customer Data Loss |
+|:---:|:---:|:---:|
+| All | 1 | None |
 
 
 ## Issue Summary
