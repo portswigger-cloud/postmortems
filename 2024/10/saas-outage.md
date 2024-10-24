@@ -6,7 +6,7 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
 
 ## Timeline
 
-- 16-10-2024 11:58 - [PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the default branch. This change Adds a default security setting to block writable/executable memory for all services.
+- 16-10-2024 11:58 - [PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the Bottlerocket repos default branch. This change Adds a default security setting to block writable/executable memory for all services.
 ```text
     MemoryDenyWriteExecute=yes
 ```
