@@ -1,11 +1,17 @@
 # 30-09-2024 - All instances not available to BSEE SaaS customers
 
+## Impact
+
+| Customers Impacted | Support Cases Raised |
+|:---:|:---:|
+| All | 1 |
+
+
 ## Issue Summary
 All of our BSEE SaaS customer instances were displaying the Environment Unavailable message.
 ![Bottlerocket rollout](../../media/24-10-2024-saas-outage-page.jpg)
 
 ## Timeline
-
 - 16-10-2024 11:58 - [PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the Bottlerocket GitHub repository's default branch. This change Adds a default security setting to block writable/executable memory for all services.
 ```text
     MemoryDenyWriteExecute=yes
