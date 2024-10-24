@@ -39,7 +39,7 @@ All of our BSEE SaaS customer instances were displaying the Environment Unavaila
 
 ## Root Cause
 
-[PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the Bottlerocket default branch, this was then released in [v1.26.0](https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.26.0). This change to the OS config stopped applications that rely on JIT compilation, such as Java, to be blocked from executing on v1.26.0 of the Bottlerocket OS.
+[PR-158](https://github.com/bottlerocket-os/bottlerocket-core-kit/pull/158) was merged into the Bottlerocket default branch, this was then released in [v1.26.0](https://github.com/bottlerocket-os/bottlerocket/releases/tag/v1.26.0). This change to the OS config stopped applications that rely on JIT compilation, such as Java, from executing on v1.26.0 of the Bottlerocket OS.
 
 ## Resolution and recovery
 
