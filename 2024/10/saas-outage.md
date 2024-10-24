@@ -2,9 +2,9 @@
 
 ## Impact
 
-| Customers Impacted | Support Cases Raised | Customer Data Loss |
-|:---:|:---:|:---:|
-| All | 1 | None |
+| Customers Impacted | Support Cases Raised | Customer Data Loss | Service Outage |
+|:---:|:---:|:---:|:---:|
+| All | 1 | None | 3h 45m |
 
 
 ## Issue Summary
