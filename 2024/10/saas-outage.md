@@ -52,6 +52,8 @@ C compilers.
 
 ## Resolution and recovery
 
+Version 1.25.0 of BottleRocket was deployed across all EKS clusters and new EKS nodes were rolled out.
+
 ## Corrective and Preventative Measures 
 
 1. Changes have been made to the Karpenter resources so that we deploy a specific versioned Bottlerocket AMI rather than the latest released AMI. This increases the maintenance burden on the technology team and may result in critical security patch deployment being delayed.
