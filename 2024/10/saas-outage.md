@@ -1,8 +1,16 @@
 # 24-10-2024 - All instances not available to BSEE SaaS customers
 
+## Severity
+
+**Critical** - Complete or major outage affecting most customers or resulting in a serious security breach.
+
+## Security Related
+
+**No**
+
 ## Impact
 
-| Customers Impacted | Support Cases Raised | Customer Data Loss | Service Outage |
+| Customers Impacted | Support Cases Raised | Customer Data Loss | Incident Duration |
 |:---:|:---:|:---:|:---:|
 | All | 1 | None | 3h 45m |
 
