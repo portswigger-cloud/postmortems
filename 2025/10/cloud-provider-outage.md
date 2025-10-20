@@ -13,7 +13,7 @@
 
 | Customers Impacted | Support Cases Raised | Customer Data Loss | Incident Duration |
 | :----------------: | :------------------: | :----------------: | :---------------: |
-|      Saas Customers     |        Not Known           |        None        |       ~2h        |
+|      Saas Customers     |        0           |        None        |       ~2h        |
 
 ## Issue Summary
 
