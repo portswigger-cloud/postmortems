@@ -13,7 +13,7 @@
 
 | Customers Impacted | Support Cases Raised | Customer Data Loss | Incident Duration |
 | :----------------: | :------------------: | :----------------: | :---------------: |
-|      Saas Customers     |        0           |        None        |       ~2h        |
+|   Saas Customers   |        1             |        None        |        ~2h        |
 
 ## Issue Summary
 
@@ -21,6 +21,8 @@ During this period:
 * New scans were unable to start
 * Provisioning of new SaaS instances and databases failed
 * Existing scans and running services were unaffected, and no customer data was lost during the incident.
+
+> AWS issue summary: https://aws.amazon.com/message/101925/
 
 ## Timeline
 
