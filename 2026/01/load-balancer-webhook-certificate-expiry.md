@@ -28,14 +28,11 @@ An expired TLS certificate for the AWS Load Balancer Controller webhook caused a
 
 ## Root Cause
 
-On 28 November 2025, AWS Load Balancer Controller was upgraded from v1.14.1 to v1.16.0. This version changed how certificates are managed, removing the `aws-load-balancer-serving-cert` Certificate resource while leaving the associated secret in place.
+On 28 November 2025, AWS Load Balancer Controller was upgraded from v1.14.1 to v1.16.0. A change was made to the Helm chart in v1.15.0 that changed how certificates are managed: https://github.com/kubernetes-sigs/aws-load-balancer-controller/pull/4359 which resulted in an orphaned TLS secret.
 
-Without an active Certificate resource, cert-manager did not renew the webhook TLS certificate. The orphaned certificate expired on 8 January 2026, causing webhook validation failures that prevented the load balancer controller from functioning.
+Because the orphaned TLS secret was owned by a Certificate object that no longer existed, cert-manager could not renew it. The  certificate contained withing the orphaned TLS secret expired on 8 January 2026, causing webhook validation failures that prevented the load balancer controller from functioning.
 
-The webhook certificate is required for pod admission and load balancer configuration. Its expiration blocked:
-- Web UI access
-- Scan initiation
-- Service availability callbacks
+The webhook certificate is required for load balancer target group configuration. Its expiration blocked the AWS Load Balancer Controller from updating AWS Target Group configurations eventually resulting in zero healthy targets.
 
 ## Resolution and Recovery
 
@@ -49,6 +46,5 @@ All services were restored once new certificates were generated and webhooks bec
 
 ## Corrective and Preventative Measures
 
-1. Implement monitoring to alert on certificate provisioning/expiration
-2. Add automated validation of webhook certificate validity in cluster health checks
-3. Audit all clusters for orphaned secrets without owning Certificate resources
+1. Audit all clusters for orphaned secrets without owning Certificate resources and resolve.
+2. Create high-level application access alerting for each SaaS cluster from an external probe.
