@@ -11,8 +11,8 @@
 ## Impact
 
 | Customers Impacted | Support Cases Raised | Customer Data Loss | Incident Duration |
-| :----------------: | :------------------: | :----------------: | :---------------: |
-|  US/Canada regions |          2           |        None        |       ~48m        |
+| :----------------: | :------------------: | :----------------: |:-----------------:|
+|  US/Canada regions |          2           |        None        |      ~24h40m      |
 
 ## Issue Summary
 
